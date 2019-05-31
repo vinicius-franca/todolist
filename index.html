@@ -1,0 +1,39 @@
+<html ng-app="toDoList">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>ToDo List</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.min.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/controllers/toDoListController.js"></script>
+        <style>
+            .completed{
+                text-decoration: line-through;
+            }
+        </style>
+    </head>
+    <body ng-controller="toDoListController" class="d-flex flex-column align-items-center">
+        <div class="card w-50 mt-3">
+            <div class="card-header">
+                <h2 class="text-center mb-0">{{ app }}</h2>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li ng-repeat="item in taskItems track by $index" class="list-group-item d-flex align-items-center">
+                    <input type="checkbox" ng-model="item.completed" class="mr-2">                    
+                    <p class="mb-0" ng-class="{'completed' : item.completed }">{{ item.description }}</p>
+                </li>
+                <li class="list-group-item">
+                    <form name="addTaskForm">
+                        <div class="form-group">
+                            <input type="text" class="form-control mb-2" ng-model="item.description" placeholder="Descrição" ng-required="true">
+                            <button class="btn btn-primary btn-block" ng-click="addTask(item)" ng-disabled="addTaskForm.$invalid">Add</button>
+                        </div>
+                    </form>
+                </li>
+            </ul>
+            {{ taskItems }}
+        </div>    
+    </body>
+</html>
