@@ -9,10 +9,8 @@ angular.module("toDoList").controller("toDoListController", function($scope){
         $scope.taskItems.push(angular.copy(item));
         delete $scope.item;
     };
-    $scope.deleteTask = function(taskItems){
-        $scope.taskItems = taskItems.filter(function(item){
-            if(!item.selecionado) return item;
-        });
+    $scope.deleteTask = function(i){
+        delete $scope.taskItems[i];
     }
     $scope.isTaskSelected = function(taskItems){
         return taskItems.some(function(item){
