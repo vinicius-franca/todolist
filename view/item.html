@@ -1,0 +1,5 @@
+<li class="list-group-item d-flex align-items-center animate-repeat">
+    <input type="checkbox" ng-model="completed" class="mr-2">
+    <p class="mb-0 flex-fill" ng-class="{'completed' : completed }" ng-transclude></p>
+    <button class="btn btn-danger btn-sm" ng-click="delete(index)">Delete</button>
+</li>

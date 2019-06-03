@@ -1,0 +1,6 @@
+
+<ul class="list-group list-group-flush">
+    <item ng-repeat="item in items track by $index" ng-if="item" index="$index" completed="item.completed">
+        {{ ::item.description }}
+    </item>
+</ul>
