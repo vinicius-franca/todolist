@@ -1,7 +1,7 @@
-# todolist
+# My toDo List
 
-##In command line type it:
-
-npm install
-
-grunt
+in command line tool type it:
+	
+`$ npm install`
+`$npm install grunt-cli -g`
+`$ grunt`
