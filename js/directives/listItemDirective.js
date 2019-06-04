@@ -1,4 +1,4 @@
-angular.module("toDoList")
+angular.module("ToDoList")
 .directive("list", function(){
     return {
         templateUrl: "view/list.html",
@@ -9,8 +9,9 @@ angular.module("toDoList")
         },
         bindController: true,
         controller: function($scope, $element, $attrs){
+            let listItems = $scope.items;
             this.deleteTask = function(i){
-                delete $scope.items[i];
+                delete listItems[i];
             }
         }     
     }
@@ -30,7 +31,6 @@ angular.module("toDoList")
         link: function(scope, element, attrs, ctrl){
             scope.delete = function(i){
                 ctrl.deleteTask(i);
-                console.log(element);
             }
         }
     }

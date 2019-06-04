@@ -1,4 +1,4 @@
-angular.module("toDoList").controller("toDoListController", function($scope){
+angular.module("ToDoList").controller("ToDoListController", function($scope){
     $scope.app = "My ToDo List";
     $scope.taskItems = [
         { description: "Culpa consequat eiusmod qui sit in consectetur laboris.", completed: true},

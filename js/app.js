@@ -1,1 +1,1 @@
-angular.module("toDoList", ['ngAnimate']);
+angular.module("ToDoList", ['ngAnimate']);
